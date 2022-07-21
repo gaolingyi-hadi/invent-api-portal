@@ -56,7 +56,14 @@
 		{
 			padding: 2.75em 1.75em 2.75em 1.75em;
 		}
+.section-hover{
+	box-shadow: 0 0 0 rgba(0,0,0,.5);
+	transition: all 0.3s;
+}
 
+.section-hover:hover{
+	box-shadow: 0px 0px 20px rgba(0,0,0,.5);
+}
 			.box .image-full
 			{
 				left: 1.75em;
@@ -240,6 +247,7 @@
 
 			#nav li a
 			{
+				font-weight: 700;
 				border-radius: 5px;
 				color: #5d5d5d;
 				text-decoration: none;
@@ -258,7 +266,8 @@
 
 			#nav li:hover a
 			{
-				background: #f3f3f3;
+				background: #d52349;
+				color: #fff;
 			}
 
 		#nav li.active
@@ -267,7 +276,7 @@
 
 			#nav li.active a
 			{
-				background: #f3f3f3;
+				/*background: #f3f3f3;*/
 			}
 
 		#nav li.current_page_item
@@ -278,9 +287,7 @@
 			{
 				background: #d52349;
 				color: #fff !important;
-				font-weight: 700;
 			}
-
 	.dropotron
 	{
 		border-radius: 5px;

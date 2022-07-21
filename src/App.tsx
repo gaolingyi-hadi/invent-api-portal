@@ -73,7 +73,7 @@ function App() {
                             <div className="5grid">
                                 <div className="row">
                                     <div className="4u">
-                                        <section className="box" >
+                                        <section className="box section-hover " >
                                             <header>
                                                 <h3>Ipsum feugiat et dolor</h3>
                                             </header>
@@ -86,7 +86,7 @@ function App() {
                                         </section>
                                     </div>
                                     <div className="4u">
-                                        <section className="box section22">
+                                        <section className="box section-hover">
                                             <header>
                                                 <h3>Sed etiam lorem nulla</h3>
                                             </header>
@@ -99,7 +99,7 @@ function App() {
                                         </section>
                                     </div>
                                     <div className="4u">
-                                        <section className="box">
+                                        <section className="box section-hover">
                                             <header>
                                                 <h3>Consequat et tempus</h3>
                                             </header>
@@ -114,7 +114,7 @@ function App() {
                                 </div>
                                 <div className="row">
                                     <div className="4u">
-                                        <section className="box">
+                                        <section className="box section-hover">
                                             <header>
                                                 <h3>Blandit sed adipiscing</h3>
                                             </header>
@@ -127,7 +127,7 @@ function App() {
                                         </section>
                                     </div>
                                     <div className="4u">
-                                        <section className="box">
+                                        <section className="box section-hover">
                                             <header>
                                                 <h3>Etiam nisl consequat</h3>
                                             </header>
@@ -140,7 +140,7 @@ function App() {
                                         </section>
                                     </div>
                                     <div className="4u">
-                                        <section className="box">
+                                        <section className="box section-hover">
                                             <header>
                                                 <h3>Dolore nisl feugiat</h3>
                                             </header>
