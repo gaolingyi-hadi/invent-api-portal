@@ -1,4 +1,4 @@
-import Nav from '@/components/Nav/App';
+import Nav from '@/components/Nav';
 
 export default function Home() {
     return (
@@ -23,7 +23,6 @@ export default function Home() {
                                     </header>
                                 </a>
                             </section>
-
                         </div>
                     </div>
                 </div>
