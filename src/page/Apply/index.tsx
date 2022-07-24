@@ -1,91 +1,36 @@
 import Nav from '@/components/Nav';
-import { Space, Table, Tag } from 'antd';
-import type { ColumnsType } from 'antd/es/table';
-import { Button } from 'antd';
+import React, {useState} from 'react';
 
-interface DataType {
-    key: string;
-    name: string;
-    age: number;
-    address: string;
-    tags: string[];
+import {
+    Button,
+    Form,
+    Input,
+    Radio,
+    Select,
+    Card
+} from 'antd';
+
+const formItemLayout = {
+    labelCol: {
+        xs: {span: 24},
+        sm: {span: 4},
+    },
+    wrapperCol: {
+        xs: {span: 24},
+        sm: {span: 20},
+    },
+};
+const tailFormBtnLayout = {
+    wrapperCol: {offset: 4, span: 20}
 }
 
-const columns: ColumnsType<DataType> = [
-    {
-        title: 'Name',
-        dataIndex: 'name',
-        key: 'name',
-        render: text => <a>{text}</a>,
-    },
-    {
-        title: 'Age',
-        dataIndex: 'age',
-        key: 'age',
-    },
-    {
-        title: 'Address',
-        dataIndex: 'address',
-        key: 'address',
-    },
-    {
-        title: 'Tags',
-        key: 'tags',
-        dataIndex: 'tags',
-        render: (_, { tags }) => (
-            <>
-                {tags.map(tag => {
-                    let color = tag.length > 5 ? 'geekblue' : 'green';
-                    if (tag === 'loser') {
-                        color = 'volcano';
-                    }
-                    return (
-                        <Tag color={color} key={tag}>
-                            {tag.toUpperCase()}
-                        </Tag>
-                    );
-                })}
-            </>
-        ),
-    },
-    {
-        title: 'Action',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Invite {record.name}</a>
-                <a>Delete</a>
-            </Space>
-        ),
-    },
-];
-
-const data: DataType[] = [
-    {
-        key: '1',
-        name: 'John Brown',
-        age: 32,
-        address: 'New York No. 1 Lake Park',
-        tags: ['nice', 'developer'],
-    },
-    {
-        key: '2',
-        name: 'Jim Green',
-        age: 42,
-        address: 'London No. 1 Lake Park',
-        tags: ['loser'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sidney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-    },
-];
-
-
 export default function Apply() {
+    const [form] = Form.useForm();
+
+    const onFinish = (values: any) => {
+        console.log('Received values of form: ', values);
+    };
+
     return (
         <div>
             <div id="header-wrapper">
@@ -102,7 +47,56 @@ export default function Apply() {
             <div id="main-wrapper">
                 <div className="5grid-layout">
                     <div className="row">
-                        <Table columns={columns} dataSource={data} />
+                        <Card style={{width: 1000, margin: "auto"}}>
+                            <Form
+                                {...formItemLayout}
+                                form={form}
+                                name="register"
+                                onFinish={onFinish}
+                                initialValues={{
+                                    residence: ['zhejiang', 'hangzhou', 'xihu'],
+                                    prefix: '86',
+                                }}
+                                scrollToFirstError
+                            >
+
+                                <Form.Item name="nickname" label="API Name">
+                                    <Input/>
+                                </Form.Item>
+                                <Form.Item name="nickname" label="Application Name">
+                                    <Input/>
+                                </Form.Item>
+                                <Form.Item name="nickname" label="Description">
+                                    <Input/>
+                                </Form.Item>
+                                <Form.Item name="nickname" label="Team Name">
+                                    <Input/>
+                                </Form.Item>
+                                <Form.Item name="nickname" label="Department">
+                                    <Input/>
+                                </Form.Item>
+                                <Form.Item name="nickname" label="Contact DL">
+                                    <Input/>
+                                </Form.Item>
+                                <Form.Item name="nickname" label="Type">
+                                    <Radio.Group onChange={() => {
+                                    }} value={1}>
+                                        <Radio value={1}>REST</Radio>
+                                        <Radio value={2}>gRPC</Radio>
+                                    </Radio.Group>
+                                </Form.Item>
+
+                                <Form.Item name="nickname" label="Swagger Json">
+                                    <Input.TextArea rows={8}/>
+                                </Form.Item>
+
+                                <Form.Item {...tailFormBtnLayout}>
+                                    <Button type="primary" htmlType="submit">
+                                        Register
+                                    </Button>
+                                </Form.Item>
+                            </Form>
+                        </Card>
                     </div>
                 </div>
             </div>
