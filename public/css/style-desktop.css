@@ -109,7 +109,7 @@
 				font-size: 1.25em;
 			}
 
-	/* List */
+	/* explore */
 
 		ul.links
 		{
@@ -226,6 +226,7 @@
 
 	#nav
 	{
+		margin-bottom: 40px;
 	}
 
 		#nav ul
@@ -265,7 +266,7 @@
 
 			#nav li:hover a
 			{
-				background: #d52349;
+				background: #1890ff;
 				color: #fff;
 			}
 
@@ -284,7 +285,7 @@
 
 			#nav li.current_page_item a
 			{
-				background: #d52349;
+				background: #1890ff;
 				color: #fff !important;
 			}
 	.dropotron
